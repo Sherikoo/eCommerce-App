@@ -45,9 +45,8 @@ public class UserController {
 		String password = createUserRequest.getPassword();
 		String confirmPassword = createUserRequest.getConfirmPassword();
 
-		if (password == null || confirmPassword == null ||
-				!password.equals(confirmPassword) ||
-				password.length() < 7) {
+		if (password == null || !password.equals(confirmPassword) ||
+                password.length() < 7) {
 			return ResponseEntity.badRequest().build();
 		}
 		user.setPassword(bCryptPasswordEncoder.encode(password));

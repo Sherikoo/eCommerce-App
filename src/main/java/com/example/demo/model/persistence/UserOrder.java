@@ -81,5 +81,4 @@ public class UserOrder {
 		order.setUser(cart.getUser());
 		return order;
 	}
-	
 }
