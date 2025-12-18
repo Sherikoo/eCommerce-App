@@ -43,7 +43,7 @@ public class ItemControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());
         assertEquals(1, response.getBody().size());
-        assertEquals("Shoe", response.getBody().getFirst().getName());
+        assertEquals("Shoe", response.getBody().get(0).getName());
         verify(itemRepo, times(1)).findAll();
     }
 
@@ -74,7 +74,7 @@ public class ItemControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());
         assertEquals(1, response.getBody().size());
-        assertEquals("Shoe", response.getBody().getFirst().getName());
+        assertEquals("Shoe", response.getBody().get(0).getName());
         verify(itemRepo).findByName("Shoe");
     }
 
